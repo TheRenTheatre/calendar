@@ -67,8 +67,11 @@
     text-decoration-color: #888;
     text-decoration-thickness: 0.05rem;
   }
-  table#ren-events a:is([class]) {
+  table#ren-events td:last-of-type a:first-of-type {
     padding-right: 0.2rem;
+  }
+  table#ren-events td:last-of-type a[href^="https://tickets.rentheatre.com"] {
+    font-weight: bold;
   }
   table#ren-events a.otr,
   table#ren-events small.otr {
@@ -101,19 +104,13 @@
     color: inherit;
     font-weight: inherit;
   }
-  table#ren-events a.qualia {
-    font-style: italic;
-    font-weight: bold;
-    color: #8fba87;
-  }
-  table#ren-events a.quickies {
-    font-style: italic;
-    font-weight: bold;
-    color: #ee2222;
-  }
   table#ren-events a.renburn {
     font-weight: bold;
     color: #f4dc04;
+  }
+  table#ren-events a.afters {
+    font-style: italic;
+    color: #ffc700;
   }
   table#ren-events a.milk {
     text-transform: uppercase;
@@ -151,49 +148,6 @@
     </tr>
   </thead>
   <tbody>
-
-    <tr>
-      <th scope="row">Sun, Mar 3</th>
-      <td>8:00 PM</td>
-      <td>
-        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
-        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
-      </td>
-    </tr>
-
-    <tr>
-      <th scope="row">Mon, Mar 4</th>
-      <td>8:00 PM</td>
-      <td>
-        <a href="#musical-mondays" class="mm">
-          Musical Mondays Sings Olivia Rodrigo!
-        </a>
-        <br>
-        <small><em>featuring a full band. open mic after. &nbsp; (doors 7:30)</em></small>
-      </td>
-    </tr>
-
-    <tr>
-      <th scope="row">Wed, Mar 6</th>
-      <td>10:30 PM</td>
-      <td>
-        <a href="https://www.instagram.com/otrwednesdays/" class="otr">OTR&#160;/&#160;off the record</a>
-        <br>
-        <small class="otr">drag / bops / black&white ball</small>
-        <br>
-        <small>(doors 10:00)</small>
-      </td>
-    </tr>
-
-
-    <tr>
-      <th scope="row">Thu, Mar 7</th>
-      <td>8:00 PM</td>
-      <td>
-        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
-        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
-      </td>
-    </tr>
 
     <tr>
       <th scope="row" rowspan="2">Fri, Mar 8</th>
@@ -258,8 +212,38 @@
       </td>
     </tr>
 
-    <tr class="break">
-      <td colspan="3"></td>
+    <tr>
+      <th scope="row">Wed, Mar 13</th>
+      <td>10:30 PM</td>
+      <td>
+        <a href="https://www.instagram.com/otrwednesdays/" class="otr">OTR&#160;/&#160;off the record</a>
+        <br>
+        <small class="otr">drag / bops / nick vs disney</small>
+        <br>
+        <small>(doors 10:00)</small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Fri, Mar 15</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://www.instagram.com/p/C36M1rOPiSO/">Cesar’s Very Pisces Birthday Bash</a>
+        (<a href="https://tickets.rentheatre.com/cesars-birthday-bash">tickets</a>)
+        <br>
+        <small>(doors 7:30)</small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Sat, Mar 16</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://www.facebook.com/events/280652844895266">ASL Slam</a>
+        (<a href="https://tickets.rentheatre.com/ASL-SLAM-5">tickets</a>)
+        <br>
+        <small>(doors 7:00)</small>
+      </td>
     </tr>
 
     <tr>
@@ -273,16 +257,32 @@
       </td>
     </tr>
 
+    <tr class="break">
+      <td colspan="3"></td>
+    </tr>
+
     <tr>
-      <th scope="row" class="multiple" colspan="2">
-        Fridays and Saturdays,<br>Mar 22<sup>nd</sup>&thinsp;–&thinsp;May 5<sup>th</sup>
-      </th>
+      <th scope="row">Fri, Mar 22</th>
+      <td>8:00 PM</td>
       <td>
         <a href="https://fromhere.com" class="fromhere">From Here</a>
         (<a href="https://tickets.rentheatre.com/from-here">tickets</a>)
         <br>
-        <small><em>A limited run of preview fundraiser performances at the Ren</em></small>
+        <small><em>Opening night!</em></small>
       </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Sat, Mar 23</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://fromhere.com" class="fromhere">From Here</a>
+        (<a href="https://tickets.rentheatre.com/from-here">tickets</a>)
+      </td>
+    </tr>
+
+    <tr class="break">
+      <td colspan="3"></td>
     </tr>
 
     <tr>
@@ -293,6 +293,41 @@
         (<a href="https://tickets.rentheatre.com/act-ii">tickets</a>)
         <br>
         <small class="otr"><em><b>yee haw</b></em></small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row" class="multiple" colspan="2">
+        Fridays and Saturdays,<br>Mar 29<sup>nd</sup>&thinsp;–&thinsp;May 5<sup>th</sup>
+      </th>
+      <td>
+        <a href="https://fromhere.com" class="fromhere">From Here</a>
+        (<a href="https://tickets.rentheatre.com/from-here">tickets</a>)
+        <br>
+        <small><em>Continuing the limited run of preview performances at the Ren</em></small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row" class="multiple" colspan="2">
+        Saturday nights at 10 PM<br>Mar 30<sup>th</sup>&thinsp;–&thinsp;May 18<sup>th</sup>
+      </th>
+      <td>
+        <a href="#the-afters" class="afters">The Afters</a>
+        (<a href="https://tickets.rentheatre.com/the-afters">tickets</a>)
+        <br>
+        <small>the entertainment you love / the art orlando needs =D</small>
+      </td>
+    </tr>
+
+    <tr class="future-hidden">
+      <th scope="row">Sat, Mar 30</th>
+      <td>10:00 PM</td>
+      <td>
+        <a href="#the-afters" class="afters">The Afters</a>
+        (<a href="https://tickets.rentheatre.com/the-afters">tickets</a>)
+        <br>
+        <small>the entertainment you love / the art orlando needs =D</small>
       </td>
     </tr>
 

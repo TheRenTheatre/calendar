@@ -1,0 +1,466 @@
+<style>
+  table#ren-events thead {
+    display: none;
+  }
+  table#ren-events th, td {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  /* Date column */
+  table#ren-events th[scope=row] {
+    padding-right: 0.8rem;
+    font-size: 1rem;
+    text-align: right;
+    font-weight: bold;
+    vertical-align: top;
+    white-space: nowrap;
+    line-height: 2.1rem;
+  }
+  table#ren-events th[scope=row].multiple {
+    font-weight: inherit;
+  }
+  /* Time column */
+  table#ren-events td {
+    padding-right: 1.5rem;
+    text-align: right;
+    font-size: 1rem;
+    vertical-align: top;
+    white-space: nowrap;
+    line-height: 2.1rem;
+  }
+  /* Event column */
+  table#ren-events td:last-of-type {
+    padding-right: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    white-space: inherit;
+    line-height: inherit;
+  }
+  table#ren-events td:last-of-type small {
+    line-height: 1.4rem;
+    margin-top: 0.4rem;
+  }
+  table#ren-events tr.past {
+    opacity: 0.5;
+  }
+  table#ren-events tr.cancelled th[scope=row]:not([rowspan]),
+  table#ren-events tr.cancelled td {
+    opacity: 0.5;
+  }
+  table#ren-events tr.hidden-by-script,
+  table#ren-events tr.future-hidden {
+    display: none;
+  }
+  table#ren-events tr.break td {
+    text-align: center;
+    vertical-align: top;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  table#ren-events tr.break td::after {
+    content: "\0022EE";
+    font-weight: lighter;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  table#ren-events a:not([class]) {
+    text-decoration-color: #888;
+    text-decoration-thickness: 0.05rem;
+  }
+  table#ren-events a:is([class]) {
+    padding-right: 0.2rem;
+  }
+  table#ren-events a.otr,
+  table#ren-events small.otr {
+    color: #ffa1eb;
+    text-decoration-color: #ffa1eb;
+    font-family: monospace;
+    word-spacing: -0.1rem;
+  }
+  table#ren-events a.otr span.thinsp,
+  table#ren-events small.otr span.thinsp {
+    word-spacing: -0.3rem;
+  }
+  table#ren-events a.otr {
+    font-weight: bold;
+    text-decoration-thickness: 0.05rem;
+    font-size: 80%;
+    display: inline-block;
+    line-height: 1.5rem !important;
+  }
+  table#ren-events small.otr {
+    font-size: 65%;
+    display: inline-block;
+    line-height: 1.4rem !important;
+  }
+  table#ren-events a.mm {
+    color: #ffc700;
+    font-weight: bold;
+  }
+  table#ren-events tr.cancelled a.mm {
+    color: inherit;
+    font-weight: inherit;
+  }
+  table#ren-events a.qualia {
+    font-style: italic;
+    font-weight: bold;
+    color: #8fba87;
+  }
+  table#ren-events a.quickies {
+    font-style: italic;
+    font-weight: bold;
+    color: #ee2222;
+  }
+  table#ren-events a.renburn {
+    font-weight: bold;
+    color: #f4dc04;
+  }
+  table#ren-events a.milk {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+    color: #f6e9c2;
+  }
+  table#ren-events a.fromhere {
+    font-weight: bold;
+    font-style: italic;
+    color: #ffde00;
+  }
+  .fe-6312b2c642d54c4207a169f7 {
+    grid-template-rows: repeat(10, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+  }
+  @media (min-width: 768px) {
+    .fe-6312b2c642d54c4207a169f7 {
+      grid-template-rows: repeat(16, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+    }
+  }
+  .mobile-only  { display: inherit; }
+  .desktop-only { display: none; }
+  @media (min-width: 768px) {
+    .mobile-only  { display: none; }
+    .desktop-only { display: inherit; }
+  }
+</style>
+
+<table id="ren-events">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Event</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th scope="row">Sun, Mar 3</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
+        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Mon, Mar 4</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="#musical-mondays" class="mm">
+          Musical Mondays Sings Olivia Rodrigo!
+        </a>
+        <br>
+        <small><em>featuring a full band. open mic after. &nbsp; (doors 7:30)</em></small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Wed, Mar 6</th>
+      <td>10:30 PM</td>
+      <td>
+        <a href="https://www.instagram.com/otrwednesdays/" class="otr">OTR&#160;/&#160;off the record</a>
+        <br>
+        <small class="otr">drag / bops / black&white ball</small>
+        <br>
+        <small>(doors 10:00)</small>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th scope="row">Thu, Mar 7</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
+        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="2">Fri, Mar 8</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
+        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
+      </td>
+    </tr>
+
+    <tr>
+      <td>11:00 PM</td>
+      <td>
+        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
+        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
+        <br>
+        <small><em>special late-night show</em> 🐮🫣</small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="2">Sat, Mar 9</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
+        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
+        <br>
+        <small>To buy package tickets to both <em>MILK</em> and <em>Renburn</em>, use the <em>MILK</em> tickets link</small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>10:00 PM</td>
+      <td>
+        <a href="/#renburn" class="renburn">Renburn</a>
+        (<a href="https://tickets.rentheatre.com/renburn-2">tickets to Renburn only</a>)
+        <br>
+        <small>Join us after <em>MILK</em> for a little (big) after-party</small>
+        <br>
+        <small>(doors 10:00)</small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Sun, Mar 10</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
+        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Mon, Mar 11</th>
+      <td>8:00 PM</td>
+      <td>
+        <a href="#musical-mondays" class="mm">
+          Musical Mondays
+        </a>
+        <br>
+        <small>David Klein presents: <em>Gotta Sing, Sing!</em>&nbsp; (doors 7:30)</small>
+      </td>
+    </tr>
+
+    <tr class="break">
+      <td colspan="3"></td>
+    </tr>
+
+    <tr>
+      <th scope="row">Sun, Mar 17</th>
+      <td>3:00 PM</td>
+      <td>
+        <a href="https://rentheatre.com/milk" class="milk">Milk</a>
+        (<a href="https://tickets.rentheatre.com/milk">tickets</a>)
+        <br>
+        <small><em>extended! bonus closing matinee</em></small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row" class="multiple" colspan="2">
+        Fridays and Saturdays,<br>Mar 22<sup>nd</sup>&thinsp;–&thinsp;May 5<sup>th</sup>
+      </th>
+      <td>
+        <a href="https://fromhere.com" class="fromhere">From Here</a>
+        (<a href="https://tickets.rentheatre.com/from-here">tickets</a>)
+        <br>
+        <small><em>A limited run of preview fundraiser performances at the Ren</em></small>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Thu, Mar 28</th>
+      <td>10:00 PM</td>
+      <td>
+        <a href="https://tickets.rentheatre.com/act-ii" class="otr">act ii: listening party</a>
+        (<a href="https://tickets.rentheatre.com/act-ii">tickets</a>)
+        <br>
+        <small class="otr"><em><b>yee haw</b></em></small>
+      </td>
+    </tr>
+
+    <!--
+    <tr>
+      <th scope="row" class="multiple">
+        <strong>Wed, Feb 14<sup>th</sup></strong><br>
+        and <strong>Wed, Feb 21<sup>st</sup></strong>
+      </th>
+      <td>10:30 PM</td>
+      <td>
+        <a href="https://tickets.rentheatre.com/thank-u-next" class="otr">thank u,<span class="thinsp"> </span>next</a>
+        (<a href="https://tickets.rentheatre.com/thank-u-next">tickets</a>)
+        <br>
+        <small class="otr"><em>another drop from <span class="desktop-only thinsp">&nbsp;</span><b>off&#160;the&#160;record</b></em></small>
+        <br>
+        <small>(doors 9:30)</small>
+      </td>
+    </tr>
+    -->
+
+    <!-- multiple example 1
+    <tr>
+      <th scope="row" colspan="2" class="multiple">
+        Thu, May 4<sup>th</sup>&thinsp;–&thinsp;Sat, May 6<sup>th</sup>
+      </th>
+      <td>
+        <a href="/the-cocaine-play" class="the-cocaine-play">The Cocaine Play</a> —
+        <a href="https://rentheatre.ticketspice.com/the-cocaine-play">tickets</a>
+        <br>
+        <small>Thursday–Saturday nights, final weekend</small>
+      </td>
+    </tr>
+    -->
+
+    <!-- multiple example 2
+    <tr>
+      <th scope="row" colspan="2" class="multiple">
+        August weekends
+      </th>
+      <td>
+        <a href="/fiftyfour" class="fiftyfour">54</a> and <a href="/fiftyfour" class="fiftyfour ah">54 After Hours</a> —
+        <a href="https://rentheatre.ticketspice.com/54">tickets</a>
+        <br>
+        <small>Friday–Saturday nights, all summer long</small>
+      </td>
+    </tr>
+    -->
+
+    <!-- tbd break
+    <tr class="break">
+      <td colspan="3"></td>
+    </tr>
+    -->
+
+  </tbody>
+</table>
+
+<script>
+  // Takes a string like "Dec 20" and returns the implied year, based on the
+  // current date.
+  function closestYearToDateString(dateStr) {
+    currentYear = (new Date()).getFullYear();
+    nearestUnixTimeFound = NaN;
+    [currentYear - 1, currentYear, currentYear + 1].forEach((year) => {
+      ms = Date.parse(dateStr + " " + year);
+      if (isNaN(nearestUnixTimeFound) ||
+          Math.abs(Date.now() - ms) < Math.abs(Date.now() - nearestUnixTimeFound)) {
+        nearestUnixTimeFound = ms;
+      }
+    });
+    return (new Date(nearestUnixTimeFound)).getFullYear();
+  }
+
+  // Iterate over each row; parse the date and time; assign the class "past"
+  // once we get to 3 hours after start time. Hide a row once we're a day out.
+  // NOTE: this is hardcoded for EST. Fix :)
+  function moveCalendarRowsToPastBasedOnCurrentTime() {
+    hoursElapsedToMarkAsPassed = 3
+    hoursElapsedToMarkAsPassedForFringe = 0.5
+    hoursElapsedToHide = 24
+    hoursElapsedToHideForFringe = 18
+    hoursElapsedToHideWhenMarkedKeepLonger = 36
+
+    dateText = "";
+    document.querySelectorAll("#ren-events tbody tr:not(.break)").forEach(tr => {
+      timeText = "";
+
+      if (dateCol = tr.querySelector("th[scope=row].multiple")) {
+        // Use the first snippet that matches e.g. "Mar 22" as the date, no matter where it occurs
+        // Examples: "Fridays and Saturdays,\nMar 22nd – May 5th", "Thu, Feb 22nd – Sun, Mar 10th"
+        dateText = dateCol.innerText.match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ([1-9][0-9]?)/)[0];
+        dateText = dateText + " " + closestYearToDateString(dateText);
+        if (dateCol.colSpan == 2) {
+          timeText = "12:00 PM";
+        }
+      } else if (dateCol = tr.querySelector("th[scope=row]:not(.multiple)")) {
+        dateText = dateCol.firstChild.data.trim();
+        dateText = dateText + " " + closestYearToDateString(dateText);
+
+        // While we're here... a side-track. Add an ordinal, only for the
+        // simplest case of a single well-formed date without one.
+        if (matches = dateCol.textContent.match(/^(Sun|Mon|Tue|Wed|Thu|Fri|Sat), (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ([1-9][0-9]?)$/)) {
+          sup = document.createElement("sup");
+          sup.innerHTML = ["st", "nd", "rd"][((+matches[3] + 90) % 100 - 10) % 10 - 1] || "th";
+          dateCol.insertAdjacentElement("beforeend", sup);
+        }
+      }
+
+      if (timeText == "") {
+        if (timeCol = tr.querySelector("td:first-of-type")) {
+          timeText = timeCol.innerText.replaceAll("\n", "").split("–")[0].trim();
+          timeText = timeText.replace(/\b(?<!:)(?<hour>1[0-9]|[1-9]) (?<ampm>[AP]M)/i, "$<hour>:00 $<ampm>");
+        }
+      }
+
+      eventTimeMs = Date.parse(dateText + " " + timeText + " UTC-0500");
+
+      isFringe = !!(tr.querySelector("a.fringe"));
+
+      if (new URL(window.location).searchParams.get("renConsoleLog") == "1") {
+        // Find the event name for logging
+        link = tr.querySelector("td:last-of-type a");
+        eventName = link ? link.innerText : tr.querySelector("td:last-of-type").innerText;
+        eventName = eventName.replaceAll("\n", " ").trim();
+
+        console.log({eventName: eventName, dateText: dateText, timeText: timeText,
+                     eventTimeMs: eventTimeMs, isFringe: isFringe, tr: tr});
+      }
+
+      if (!isNaN(eventTimeMs)) {
+        hoursPassedSinceStart = (Date.now() - eventTimeMs) / 1000 / 60 / 60;
+        if ((hoursPassedSinceStart > hoursElapsedToMarkAsPassed) ||
+            (isFringe && hoursPassedSinceStart > hoursElapsedToMarkAsPassedForFringe)) {
+          tr.classList.add("past");
+        } else {
+          tr.classList.remove("past");
+        }
+        if ((hoursPassedSinceStart > hoursElapsedToHideWhenMarkedKeepLonger) ||
+            (hoursPassedSinceStart > hoursElapsedToHide && !tr.classList.contains("keep-longer")) ||
+            (isFringe && hoursPassedSinceStart > hoursElapsedToHideForFringe)) {
+          tr.classList.add("hidden-by-script")
+          th = tr.querySelector("th[scope=row]");
+          rowspan = 1;
+          if (th) {
+            rowspan = +th.getAttribute("rowspan");
+          }
+          if (rowspan > 1) {
+            nextTr = tr.nextElementSibling;
+            nextTh = document.createElement("th");
+            nextTh.setAttribute("scope", "row");
+            if (rowspan > 2) {
+              nextTh.setAttribute("rowspan", rowspan - 1);
+            }
+            nextTh.innerHTML = th.innerHTML;
+            nextTr.insertAdjacentElement("afterbegin", nextTh);
+            th.removeAttribute("rowspan");
+          }
+        }
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    // Loading hasn't finished yet
+    document.addEventListener("DOMContentLoaded", moveCalendarRowsToPastBasedOnCurrentTime);
+  } else {
+    // `DOMContentLoaded` has already fired
+    moveCalendarRowsToPastBasedOnCurrentTime();
+  }
+</script>

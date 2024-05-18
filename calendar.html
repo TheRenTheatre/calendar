@@ -44,7 +44,8 @@
     opacity: 0.5;
   }
   table#ren-events tr.cancelled th[scope=row]:not([rowspan]),
-  table#ren-events tr.cancelled td {
+  table#ren-events tr.cancelled td,
+  table#ren-events tr td span.cancelled {
     opacity: 0.5;
   }
   table#ren-events tr.hidden-by-script,
@@ -111,14 +112,21 @@
   table#ren-events a.afters {
     font-style: italic;
     color: #ffc700;
+    font-weight: bold;
   }
   table#ren-events a.fringe {
     font-size: 1.1rem;
     color: #c243ad;
-    text-decoration: none;
+    text-decoration-color: #555;
+    text-decoration-thickness: 0.05rem;
+    text-underline-offset: 0.1rem;
   }
   table#ren-events a.fringe em {
     color: #fff;
+  }
+  table#ren-events small.fringe,
+  table#ren-events span.fringe {
+    color: #f4735c;
   }
   .fe-6312b2c642d54c4207a169f7 {
     grid-template-rows: repeat(10, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
@@ -151,7 +159,6 @@
       <td>7:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Whore’s Eye View</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -159,7 +166,6 @@
       <td>8:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Dungeons and Drag Queens: Second Edition</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -167,7 +173,6 @@
       <td>10:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Tiger Daughter</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -177,7 +182,6 @@
       <td>1:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Sit at the Bar</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -185,7 +189,6 @@
       <td>3:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Tiger Daughter</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -193,7 +196,6 @@
       <td>4:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Who’s Afraid of the West Cherry Orchard: An American Classic in an Active Quiznos</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -201,7 +203,6 @@
       <td>6:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Whore’s Eye View</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -209,7 +210,6 @@
       <td>7:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Life Goes On?</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -217,7 +217,6 @@
       <td>9:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Retributetion</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -238,7 +237,6 @@
       <td>1:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Life Goes On?</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -246,7 +244,6 @@
       <td>3:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Whore’s Eye View</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -254,7 +251,6 @@
       <td>4:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Dungeons and Drag Queens: Second Edition</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -262,7 +258,6 @@
       <td>6:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Tiger Daughter</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -270,7 +265,6 @@
       <td>7:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Sit at the Bar</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -278,7 +272,6 @@
       <td>9:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Whore’s Eye View</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -286,7 +279,6 @@
       <td>10:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Retributetion</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -309,7 +301,6 @@
       <td>6:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Who’s Afraid of the West Cherry Orchard: An American Classic in an Active Quiznos</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -317,7 +308,6 @@
       <td>8:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Retributetion</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -325,7 +315,6 @@
       <td>9:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Sit at the Bar</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -335,7 +324,6 @@
       <td>6:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Retributetion</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -343,7 +331,6 @@
       <td>8:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Life Goes On?</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -351,7 +338,6 @@
       <td>9:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Sit at the Bar</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -372,7 +358,6 @@
       <td>6:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Who’s Afraid of the West Cherry Orchard: An American Classic in an Active Quiznos</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -380,7 +365,6 @@
       <td>8:00 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Whore’s Eye View</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
@@ -388,19 +372,175 @@
       <td>9:30 PM</td>
       <td>
         <a class="fringe" href="/fringe2024">Fringe: <em>Retributetion</em></a>
-        (<a href="/fringe2024">tickets</a>)
       </td>
     </tr>
 
 
     <tr>
-      <th scope="row" class="multiple" colspan="2">
-        <strong>Fri, May 24<sup>st</sup>&thinsp;–&thinsp;Sun, May 26<sup>th</sup></strong>
-      </th>
+      <th scope="row" rowspan="4">Fri, May 24</th>
+      <td>6:30 PM</td>
       <td>
-        <a href="/fringe2024" class="fringe">Fringe final weekend :(</a>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Sit at the Bar</em></a>
       </td>
     </tr>
+
+    <tr>
+      <td>8:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Who’s Afraid of the West Cherry Orchard: An American Classic in an Active Quiznos</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>9:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Retributetion</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>11:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Dungeons and Drag Queens: Second Edition</em></a>
+      </td>
+    </tr>
+
+
+
+    <tr>
+      <th scope="row" rowspan="7">Sat, May 25</th>
+      <td>1:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Dungeons and Drag Queens: Second Edition</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>3:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Life Goes On?</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>4:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Who’s Afraid of the West Cherry Orchard: An American Classic in an Active Quiznos</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>6:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Tiger Daughter</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>7:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Whore’s Eye View</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>9:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Life Goes On?</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>10:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Dungeons and Drag Queens: Second Edition</em></a>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="7">Sun, May 26</th>
+      <td>1:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Who’s Afraid of the West Cherry Orchard: An American Classic in an Active Quiznos</em></a>
+        <small class="fringe">last performance!</small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>3:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Whore’s Eye View</em></a>
+        <small class="fringe">last performance!</small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>4:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Life Goes On?</em></a>
+        <small class="fringe">last performance!</small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>6:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Retributetion</em></a>
+        <small class="fringe">last performance!</small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>7:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Tiger Daughter</em></a>
+        <small class="fringe">last performance!</small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>9:00 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Sit at the Bar</em></a>
+        <small class="fringe">last performance!</small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>10:30 PM</td>
+      <td>
+        <a class="fringe" href="/fringe2024">Fringe: <em>Dungeons and Drag Queens: Second Edition</em></a>
+        <br>
+        <small class="fringe">last performance! good night!!</small>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th scope="row" rowspan="2">Mon, May 27</th>
+      <td>9:00 PM</td>
+      <td>
+        We’ll be at the <span class="fringe">Fringe Closing Ceremony</span> on the lawn!
+      </td>
+    </tr>
+
+    <tr class="cancelled">
+      <td></td>
+      <td>(no Musical Mondays this week or next)</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Wed, May 29</th>
+      <td>11:00 PM</td>
+      <td>
+        <a href="https://www.instagram.com/otrwednesdays/" class="otr">OTR&#160;/&#160;off the record</a>
+        <br>
+        <small class="otr">drag / bops</small>
+        <br>
+        <small>(doors 10:30)</small>
+      </td>
+    </tr>
+
 
     <tr class="break">
       <td colspan="3"></td>

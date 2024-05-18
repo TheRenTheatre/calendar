@@ -472,8 +472,8 @@
 </table>
 
 <script>
-  // Takes a string like "Dec 20" and returns the implied year, based on the
-  // current date.
+  // Utility function: return the year implied by the argument, a string
+  // like "Dec 20", and the current date.
   function closestYearToDateString(dateStr) {
     currentYear = (new Date()).getFullYear();
     nearestUnixTimeFound = NaN;
@@ -529,7 +529,7 @@
         }
       }
 
-      eventTimeMs = Date.parse(dateText + " " + timeText + " UTC-0500");
+      startTimeMs = Date.parse(dateText + " " + timeText + " UTC-0400");
 
       isFringe = !!(tr.querySelector("a.fringe"));
 
@@ -540,11 +540,11 @@
         eventName = eventName.replaceAll("\n", " ").trim();
 
         console.log({eventName: eventName, dateText: dateText, timeText: timeText,
-                     eventTimeMs: eventTimeMs, isFringe: isFringe, tr: tr});
+                     startTimeMs: startTimeMs, isFringe: isFringe, tr: tr});
       }
 
-      if (!isNaN(eventTimeMs)) {
-        hoursPassedSinceStart = (Date.now() - eventTimeMs) / 1000 / 60 / 60;
+      if (!isNaN(startTimeMs)) {
+        hoursPassedSinceStart = (Date.now() - startTimeMs) / 1000 / 60 / 60;
         if ((hoursPassedSinceStart > hoursElapsedToMarkAsPassed) ||
             (isFringe && hoursPassedSinceStart > hoursElapsedToMarkAsPassedForFringe)) {
           tr.classList.add("past");
@@ -576,11 +576,17 @@
     });
   }
 
+
+  // The top-level function
+  function processCalendarTable() {
+    moveCalendarRowsToPastBasedOnCurrentTime();
+  }
+
   if (document.readyState === "loading") {
     // Loading hasn't finished yet
-    document.addEventListener("DOMContentLoaded", moveCalendarRowsToPastBasedOnCurrentTime);
+    document.addEventListener("DOMContentLoaded", processCalendarTable);
   } else {
     // `DOMContentLoaded` has already fired
-    moveCalendarRowsToPastBasedOnCurrentTime();
+    processCalendarTable();
   }
 </script>

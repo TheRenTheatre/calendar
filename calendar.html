@@ -340,6 +340,34 @@
     return (new Date(nearestUnixTimeFound)).getFullYear();
   }
 
+  // Iterate over an array literal, adding each event to the calendar table in its
+  // right place among the existing calendar events in the DOM.
+  function addCalendarRowsFromData() {
+    events = [
+      {    "startTime": "2024-05-24 18:30:00 -04:00",
+            "nameHTML": "Fringe: <em>Sit at the Bar</em>",
+            "nameLink": "/fringe2024",
+       "nameLinkClass": "fringe",
+         "ticketsLink": "/fringe2024",
+            "noteHTML": null
+     }
+    ];
+
+    previousRowStartTimeMs = 0;
+    events.forEach(event => {
+      startTimeMsToInsert = Date.parse(event.startTime);
+      document.querySelectorAll("#ren-events tbody tr:not(.break)").forEach(tr => {
+        if (previousRowStartTimeMs < startTimeMsToInsert && tr.dataset.startTimeMs > startTimeMsToInsert) {
+          console.log("inserting " + startTimeMsToInsert.toString());
+          tr.before("")
+        } else {
+          console.log("not inserting");
+          previousRowStartTimeMs = tr.dataset.startTimeMs;
+        }
+      });
+    });
+  }
+
   // Iterate over each row; parse the date and time; assign the class "past"
   // once we get to 3 hours after start time. Hide a row once we're a day out.
   // NOTE: this is hardcoded for EST. Fix :)
@@ -397,6 +425,7 @@
       }
 
       if (!isNaN(startTimeMs)) {
+        tr.dataset.startTimeMs = startTimeMs;
         hoursPassedSinceStart = (Date.now() - startTimeMs) / 1000 / 60 / 60;
         if ((hoursPassedSinceStart > hoursElapsedToMarkAsPassed) ||
             (isFringe && hoursPassedSinceStart > hoursElapsedToMarkAsPassedForFringe)) {
@@ -433,6 +462,7 @@
   // The top-level function
   function processCalendarTable() {
     moveCalendarRowsToPastBasedOnCurrentTime();
+    // addCalendarRowsFromData();
   }
 
   if (document.readyState === "loading") {
